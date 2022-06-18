@@ -5,18 +5,17 @@ const arrayOfValues = ['455', 87.15, true, undefined, 7, null, 'false', [], {}];
 arrayOfValues.forEach((value, i) => {
     i++;
     const logValue = `${i}. Value ${value} is ${typeof value}.`;
-
+    
     if (typeof value === 'number') {
         console.log(logValue.concat(` ${value} + 3 = ${value + 3}`));
     } else {
         console.log(logValue);
     }
-})
+});
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //#2
 
 const alphaExp = '[0-9]+';
-
 let myArrayLength = '';
 while (myArrayLength !== null){
     myArrayLength = prompt('Enter the integer number');
