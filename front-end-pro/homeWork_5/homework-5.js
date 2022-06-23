@@ -26,9 +26,23 @@ array5.shift();
 console.log(array5);
 console.log(array5.slice(0, array5.length - 1));
 
-//*
+//!*
 //#7
 const arrayOne = ['dog', 'cat', 'bird', 'rabbit', 'horse'];
 const arrayTwo = ['apple', 'car', 'cat', 'ball', 'horse'];
 
 console.log(arrayTwo.filter(e => arrayOne.includes(e)));
+
+
+console.log(isPalindrome('tenet'));
+
+function isPalindrome(word) {
+    return word.split('').reverse().join('').includes(word);
+}
+
+var myString = "[22].[44].[33].";
+var myRegexp = /.*\[(\d*)*\].*\[(\d*)*\].*\[(\d*)*\].*/g;
+
+var execResult = myRegexp.exec(myString);
+console.log(execResult.length);
+console.log(execResult[1]);
