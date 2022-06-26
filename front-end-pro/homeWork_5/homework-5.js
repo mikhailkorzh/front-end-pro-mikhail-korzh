@@ -18,7 +18,9 @@ console.log(array3);
 
 //#5
 const array4 = initialArray.filter(val => !(val % 2)).reduce((val1, val2) => val1 + val2);
+const array4_1 = initialArray.reduce((val1, val2) => val2 % 2 ? val1 : val1 + val2, 0);
 console.log(array4);
+console.log(array4_1);
 
 //#6
 const array5 = [...initialArray];

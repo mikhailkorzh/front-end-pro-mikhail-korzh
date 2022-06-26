@@ -37,6 +37,7 @@ function printAllEvenValues(arr) {
         .reduce((total, amount) => total + amount)
     console.log(res);
 }*/
+/*
 
 const elements = ['Fire', 'Air', 'Water'];
 
@@ -54,11 +55,41 @@ console.log(every_nth(values, 3));
 const elem1 = [1, 2, 3, [3, 4, 6]];
 console.log(elem1);
 console.log(elem1.flat());
+*/
 
 
 
-const elem2 = [1, 2, 10, 3, 5, 0];
+/*const elem2 = [1, 2, 10, 3, 5, 0];
 
-console.log(elem2.find(el => el > 5));
+console.log(elem2.find(el => el > 5));*/
+
+function makeMultiply(x) {
+    return function (y) {
+        return x * y;
+    };
+}
+
+const multiply = makeMultiply(2);
+const val2 = multiply(10);
+
+console.log(val2);
+
+///////////////////////////////////////////////////////////////////////////
+function outputFunctio (text) {
+    console.log(text);
+};
+
+const outputFunctioAlert = (text) => {
+    alert(text);
+};
+
+function adder(x, y, func1, func2) {
+    const res = x + y;
+    if (res > 5) {
+        func1(res);
+    } else {
+        func2(res);
+    }
+}
 
 
