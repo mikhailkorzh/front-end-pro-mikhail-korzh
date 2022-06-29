@@ -58,12 +58,11 @@ console.log(elem1.flat());
 */
 
 
-
 /*const elem2 = [1, 2, 10, 3, 5, 0];
 
 console.log(elem2.find(el => el > 5));*/
 
-function makeMultiply(x) {
+/*function makeMultiply(x) {
     return function (y) {
         return x * y;
     };
@@ -89,7 +88,38 @@ function adder(x, y, func1, func2) {
         func1(res);
     } else {
         func2(res);
+   */
+/*
+}
+}
+*/
+
+
+const fileSystem = {
+    folder: {
+        filename: 'text.txt',
+        content: '',
+        folder: {
+            filename: 'text.txt',
+            content: '',
+            folder: {
+                filename: 'thisone.txt',
+                content: 'hello',
+                folder: {
+                    filename: 'text.txt',
+                    content: '',
+                }
+            }
+        }
     }
 }
 
+function findContent(x, pattern, deep = 0) {
+    if (x === undefined) {
+        return 'no file';
+    }
+    return (x.filename === pattern) ? {'contest ': x.content, deep} :
+        findContent(x.folder, pattern, ++deep);
+}
 
+console.log(findContent(fileSystem, 'thisone.txt'));
