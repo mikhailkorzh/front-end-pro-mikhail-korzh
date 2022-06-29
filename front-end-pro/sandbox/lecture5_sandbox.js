@@ -107,8 +107,8 @@ const fileSystem = {
                 filename: 'thisone.txt',
                 content: 'hello',
                 folder: {
-                    filename: 'text.txt',
-                    content: '',
+                    filename: 'thisone.txt',
+                    content: '768',
                 }
             }
         }
@@ -116,9 +116,11 @@ const fileSystem = {
 }
 
 function findContent(x, pattern, deep = 0) {
+    const array1 = [];
     if (x === undefined) {
         return 'no file';
     }
+
     return (x.filename === pattern) ? {'contest ': x.content, deep} :
         findContent(x.folder, pattern, ++deep);
 }
@@ -141,11 +143,30 @@ let list = {
 };
 
 function findSum(x, sum = 0) {
-    if (x === undefined) {
+    if (x === undefined || x === NaN) {
         return 'no values';
     }
+
     sum = sum + x.value;
+
     return x.next ? findSum(x.next, sum) : sum;
 }
 
 console.log(findSum(list));
+
+
+////////////////////
+
+function createDec() {
+    return (name) => `Hello ${name}`;
+}
+const dec = createDec();
+
+console.log(dec('name'));
+
+function createPipe() {
+    return (text) => `===== ${text} =====`;
+}
+
+const pipeFunction = createPipe();
+console.log(pipeFunction('some text you like'));
