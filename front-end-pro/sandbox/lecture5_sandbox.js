@@ -96,6 +96,7 @@ function adder(x, y, func1, func2) {
 
 
 const fileSystem = {
+    //filename: 'text.txt',
     folder: {
         filename: 'text.txt',
         content: '',
@@ -123,3 +124,28 @@ function findContent(x, pattern, deep = 0) {
 }
 
 console.log(findContent(fileSystem, 'thisone.txt'));
+
+//////////////////////////////////////////////////////
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+function findSum(x, sum = 0) {
+    if (x === undefined) {
+        return 'no values';
+    }
+    sum = sum + x.value;
+    return x.next ? findSum(x.next, sum) : sum;
+}
+
+console.log(findSum(list));
