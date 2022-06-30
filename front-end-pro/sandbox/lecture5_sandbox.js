@@ -116,7 +116,6 @@ const fileSystem = {
 }
 
 function findContent(x, pattern, deep = 0) {
-    const array1 = [];
     if (x === undefined) {
         return 'no file';
     }
