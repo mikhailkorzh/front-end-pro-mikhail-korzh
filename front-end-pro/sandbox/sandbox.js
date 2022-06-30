@@ -94,7 +94,7 @@ function adder(x, y, func1, func2) {
 }
 */
 
-
+/*
 const fileSystem = {
     //filename: 'text.txt',
     folder: {
@@ -124,10 +124,10 @@ function findContent(x, pattern, deep = 0) {
         findContent(x.folder, pattern, ++deep);
 }
 
-console.log(findContent(fileSystem, 'thisone.txt'));
+console.log(findContent(fileSystem, 'thisone.txt'));*/
 
 //////////////////////////////////////////////////////
-let list = {
+/*let list = {
     value: 1,
     next: {
         value: 2,
@@ -151,11 +151,12 @@ function findSum(x, sum = 0) {
     return x.next ? findSum(x.next, sum) : sum;
 }
 
-console.log(findSum(list));
+console.log(findSum(list));*/
 
 
 ////////////////////
 
+/*
 function createDec() {
     return (name) => `Hello ${name}`;
 }
@@ -168,4 +169,122 @@ function createPipe() {
 }
 
 const pipeFunction = createPipe();
-console.log(pipeFunction('some text you like'));
+console.log(pipeFunction('some text you like'));*/
+
+/*let user = {
+    name: "Джон",
+    age: 30,
+
+    sayHi() {
+        // this - это "текущий объект"
+        alert(this.name);
+};
+
+user.sayHi();*/
+
+/*let user = {name: "Джон"};
+let admin = {name: "Админ"};
+
+function sayHi() {
+    console.log(this.name);
+}
+
+user.f = sayHi;
+admin.f = sayHi;
+
+user.f();
+admin.f();*/
+
+/*let user1 = {
+    firstName: "Илья",
+    sayHi() {
+        let arrow = () => console.log(this.firstName);
+        arrow();
+    }
+};
+
+user1.sayHi();
+
+let user = {
+    name: "Джон",
+    go() {
+        let arrow = () => console.log(this.name);
+        arrow();
+    }
+}
+user.go()
+
+
+function makeUser() {
+    return {
+        name: "Джон",
+        ref() {
+            return this;
+        }
+    };
+};
+
+let user2 = makeUser();*/
+
+//alert(user2.ref().name);
+
+
+/*let calculator = {
+    read() {
+        this.a = +prompt('a', 0);
+        this.b = +prompt('b', 0);
+    },
+
+    sum() {
+        return (this.a) + (this.b);
+    },
+
+    mul() {
+        return this.a * this.b;
+    }
+};
+
+calculator.read();
+alert(calculator.sum());
+alert(calculator.mul());*/
+
+
+let arr = [10, 10, 10, 10, 10, 10];
+
+function sumTen(arr, accum = 0) {
+    if (!arr.length) {
+        return accum;
+    }
+    let temp = arr.shift(); // 10
+    return sumTen(arr, (temp === 10 ? accum += temp : accum)); //sumTen(arr, 0)
+}
+
+console.log(sumTen(arr));
+
+let arr1 = [10, 10, 10, 10, 10, 10];
+
+function sum(arr, accum = 0) {
+    if (!arr.length) {
+        return accum;
+    }
+    let temp = arr.shift();
+    accum += temp;
+    return sum(arr, accum);
+}
+
+console.log(sum(arr1));
+
+let arr2 = [10, 5, 10, 6, 10, 10];
+
+function findValue(arr, x = []) {
+    if (!arr.length) {
+        return x;
+    }
+    let temp = arr.shift();
+    if (temp > 5) {
+        x.push(temp)
+    }
+    return findValue(arr,x);
+}
+
+console.log(findValue(arr2));
