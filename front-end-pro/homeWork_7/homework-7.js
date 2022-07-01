@@ -58,9 +58,19 @@ function sum_2(arr) {
     return (arr.length === 0) ? 0 : arr[0] + sum_2(arr.slice(1));
 }
 
+function sum_3(arr, accum = 0) {
+    if (!arr.length) {
+        return accum;
+    }
+    let temp = arr.shift();
+    accum += temp;
+    return sum_3(arr, accum);
+}
+
 console.log(initArray);
 console.log(sum_1(initArray));
 console.log(sum_2(initArray));
+console.log(sum_3(initArray));
 
 console.log('////////////////////////////////////Task#5///////////////////////////////////////////');
 
@@ -79,18 +89,18 @@ console.log(sumVal(testArr1));
 console.log('////////////////////////////////////Task#6///////////////////////////////////////////');
 
 const testArr2 = [0, 2, 4, 5, 7, 10, 2, 3, 5, 6, 10, 8];
+let temp = 0;
 
-function findElements(arr, n = 0, x = []) {
-    if (n === arr.length) {
-        return 0;
-    } else if (arr[n] > 5) {
-        x.push(arr[n]);
-        findElements(arr, n + 1, x);
-    } else {
-        findElements(arr, n + 1, x);
+function findElements(arr, x = []) {
+    if (!arr.length) {
+        return x;
     }
-    return x;
+    temp = arr.shift();
+
+    if (temp > 5) {
+        x.push(temp);
+    }
+    return findElements(arr, x);
 }
 
 console.log(findElements(testArr2));
-
