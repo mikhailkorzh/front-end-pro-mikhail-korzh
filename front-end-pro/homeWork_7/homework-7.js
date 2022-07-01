@@ -66,7 +66,7 @@ console.log('////////////////////////////////////Task#5/////////////////////////
 
 const testArr1 = [0, 2, 4, 5, 7, 10, 2, 3, 5, 6, 10, 3];
 
-function sumVal(array, n = 0, sum = 0) {
+function sumVal(array, n = 0) {
     if (!array.length) {
         return n;
     }
