@@ -1,3 +1,5 @@
+
+
 /*const alphaExp = '[0-9]+';
 let myArrayLength = '';
 let sum = 0;
@@ -249,6 +251,7 @@ alert(calculator.sum());
 alert(calculator.mul());*/
 
 
+/*
 let arr = [10, 10, 10, 10, 10, 10];
 
 function sumTen(arr, accum = 0) {
@@ -287,4 +290,104 @@ function findValue(arr, x = []) {
     return findValue(arr,x);
 }
 
-console.log(findValue(arr2));
+console.log(findValue(arr2));*/
+
+/*function createCounter(currentCount = 1) {
+    return  () => currentCount++;
+}
+
+let counter = createCounter();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+let city = 'Kh';
+
+function logCity() {
+    console.log(city)
+};
+
+function getCity(){
+    let city = 'Ki';
+    logCity();
+}
+
+getCity();
+
+
+/////
+
+let obj = {
+    a: 'a',
+    b: {
+        c: 10,
+        d: 'd',
+    },
+}
+
+let obj_1 = {
+    ...obj
+}
+
+obj_1.b.c = 40;
+
+/!*
+let obj_2 = Object.assign({}, obj);*!/
+let obj_3 = JSON.parse(JSON.stringify(obj));
+
+obj_3.b.c = 60;
+
+
+console.log(obj);
+console.log(obj_1);
+console.log(obj_3);
+
+const objNew = {
+    x: 10
+};
+
+function someFunc() {
+    return this.x + 10;
+}
+
+objNew.f = someFunc;
+console.log(objNew.f());
+
+
+/!*let objNew_1 = someFunc.bind(objNew);
+
+console.log(objNew_1());*!/
+console.log(someFunc.bind(objNew)());
+
+const test_1 = [...Array(10)].map(() => 2);
+console.log(test_1);
+const test_2 = new Array(10);
+test_2.map(() => 2);
+console.log(test_2[0]);
+
+let a = [];
+const b = [];
+
+a = b;
+
+console.log([] == []);
+console.log([] === []);
+console.log(a === b);
+console.log(a == b);
+*/
+
+
+let obj = {
+    name: 'scotch.io',
+    exec: function exec() {
+        return true;
+    },
+}
+
+let method1 = Object.assign({}, obj);
+let method2 = JSON.parse(JSON.stringify(obj));
+
+console.log(method1); //Object.assign({}, obj);
+console.log(method2);
+
