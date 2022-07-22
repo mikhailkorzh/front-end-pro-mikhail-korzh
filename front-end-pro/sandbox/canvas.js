@@ -1,11 +1,17 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-let myColor = 'black';
+let myColor = "black";
 
 document.getElementById("color").oninput = function () {
   myColor = this.value;
   console.log(myColor);
 };
+
+document.getElementById('clicked').onclick = function(){
+  console.log('clicked');
+}
+
+document.getElementById('clicked').addEventListener('click', c)
 
 // ctx.fillStyle = "red";
 // ctx.fillRect(100, 50, 150, 75);
@@ -70,19 +76,45 @@ document.getElementById("color").oninput = function () {
 // ctx.fill();
 
 // ctx.clearRect(0, 0, 400, 200);
-ctx.clear;
+//ctx.clear;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //console.log(x, y);
-canvas.onmousedown = function (event) {
-  canvas.onmousemove = function (event) {
-    let x = event.offsetX;
-    let y = event.offsetY;
-    ctx.fillRect(x - 5, y - 5, 5, 5);
-    ctx.fillStyle = myColor;
-  };
-  canvas.onmouseup = function () {
-    canvas.onmousemove = null;
-  };
+// canvas.onmousedown = function (event) {
+//   canvas.onmousemove = function (event) {
+//     let x = event.offsetX;
+//     let y = event.offsetY;
+//     ctx.fillRect(x - 5, y - 5, 5, 5);
+//     ctx.fillStyle = myColor;
+//   };
+//   canvas.onmouseup = function () {
+//     canvas.onmousemove = null;
+//   };
+// };
+
+const pi = Math.PI;
+
+// ctx.arc(150, 100, 75, 0, 2 * pi, false);
+// ctx.lineWidth = "5";
+// ctx.fillStyle = "yellow";
+// ctx.strokeStyle = "green";
+// ctx.stroke();
+// ctx.fill();
+
+// ctx.clearRect(0, 0, 400, 200);
+
+canvas.onmousemove = function (event) {
+  let x = event.offSetX;
+  ctx.clearRect(0, 0, 400, 200);
+  ctx.arc(200, 100, Math.abs(x - 200), 0, 2 * pi, false);
+  ctx.stroke();
+  ctx.fill();
 };
+
+
+document.getElementById("clicked").addEventListener("click", myFunction);
+
+function myFunction() {
+  console.log('clicked');
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>replace footer</title>
+    <link rel="stylesheet" href="sandBox.js">
+</head>
+
+<style>
+    td[cell-red="#CC0000"] {
+        background: #CC0000;
+    }
+    td[cell-red="lightRed"] {
+        background: #FF9999;
+    }
+</style>
+
+<body>
+<input type="text" onclick="console.log('click')" onmousemove="console.log('move')">
+
+<div id="clickable" onclick="console.log('clicked')"></div>
+
+<input id="first-input" text="text">
+<input id="second-input" text="text">
+    
+<!-- <div class="container">
+    <ul>
+        <li>Венера</li>
+        <li>Меркурий</li>
+        <li>Марс</li>
+    </ul>
+    <ol>
+        <li>Сириус</li>
+        <li>Капелла</li>
+        <li>Ригель</li>
+    </ol>
+</div> -->
+
+
+<!-- <div class="content-table">
+    <ul class="stars-list">
+        <li class="star">О сириусе</li>
+        <li class="star">Об альдебаране</li>
+        <li class="contact">Обратная связь</li>
+    </ul>
+</div> -->
+
+
+<table>
+    <tr>
+        <td cell-red="#CC0000">1</td><td cell-blue="#0000CC">2</td>
+        <td cell-red="#CC0000">3</td><td cell-blue="#0000CC">4</td>
+    </tr>
+    <tr>
+        <td cell-blue="#0000CC">5</td><td cell-red="#CC0000">6</td>
+        <td cell-blue="#0000CC">7</td><td cell-red="#CC0000">8</td>
+    </tr>
+</table>
+
+<form class="myForm" style="border: 1px solid; padding: 10px; width: 10%; border-radius: 4px">
+    <label for="fname" style="padding: 4px; width: 10%; border-radius: 4px">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John" style="border: 2px solid red; border-radius: 4px"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  
+  <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+  <div id="first-div" style="border: 1px solid; padding: 10px; width: 10%;">
+    <input id="first-div-input" type="text" style="border: 1px solid; padding: 5px; width: 80%;">
+  </div>
+
+  <ul id="ul">
+    <li>red</li>
+    <li>blue</li>
+  </ul>
+
+<canvas id="canvas"></canvas>
+<input type="color" id="color">
+
+<script src="./sandBox.js">
+
+</script>
+</body>
+
+</html>
