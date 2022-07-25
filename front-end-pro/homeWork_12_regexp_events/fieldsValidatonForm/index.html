@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>replace footer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../common/css/normalize.css">
+    <link rel="stylesheet" href="../../common/css/skeleton.css">
+</head>
+
+<body>
+  <div class="container">
+  <form class="myForm" id="dataForm">
+    <div class="row">
+      <div class="one.column">
+        <label for="exampleNameInput">Your name</label>
+        <input class=".u-pull-left" type="text" placeholder="John Doe" id="exampleNameInput" required>
+      <span class="error" id="nameInputError" hidden style="color:red;"><br>
+        Incorrect username format
+      </span>
+      </div>
+      <div class="one.column">
+        <label for="examplePhoneInput">Your phone</label>
+        <input class=".u-pull-left" type="text" placeholder="+38(**)*******" id="examplePhoneInput">
+        <span class="error" id="phoneInputError" hidden style="color:red;"><br>
+          Incorrect phone format
+        </span>
+      </div>
+      <div class="one.column">
+        <label for="exampleEmailInput">Your email</label>
+        <input class=".u-pull-left" type="text" placeholder="test@mailbox.com" id="exampleEmailInput" required>
+        <span class="error" id="emailInputError" hidden style="color:red;"><br>
+          Incorrect email format
+        </span>
+      </div>
+      <input class="button-primary" type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+
+<script src="./validationForm.js"></script>
+</body>
+
+</html>
