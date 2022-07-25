@@ -38,7 +38,7 @@ function validateEmail() {
 }
 
 function validateUserName() {
-  if(/^[a-zA-Z0-9]+$/.test(nameFld.value)){
+  if(/^[a-zA-Z]+$/.test(nameFld.value)){
     showError(nameInputError, nameFld, false);
   }else{
     showError(nameInputError, nameFld, true);
