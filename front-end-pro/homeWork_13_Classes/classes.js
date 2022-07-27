@@ -1,5 +1,5 @@
 //////////////////////////////////////////Task#1/////////////////////////////////////////////////////
-let student = {
+const student = {
   firstName: 'John',
   lastName: 'Doe',
   averageScore: 4.8,
@@ -22,7 +22,7 @@ function Aspirant() {
 }
 Aspirant.prototype = student;
 
-let aspirant = new Aspirant();
+const aspirant = new Aspirant();
 
 for (let key in aspirant) {
   console.log(key, ':', aspirant[key]);
@@ -48,7 +48,7 @@ class Plane {
   }
 }
 
-let airport = {
+const airport = {
   planes: [],
   getFlyingPlanes(i = 0) {
     for (let value of this.planes) {
@@ -58,9 +58,9 @@ let airport = {
   },
 };
 
-let plane1 = new Plane('First');
-let plane2 = new Plane('Killer');
-let plane3 = new Plane('SpitFyre');
+const plane1 = new Plane('First');
+const plane2 = new Plane('Killer');
+const plane3 = new Plane('SpitFyre');
 
 plane2.takeOff();
 plane3.takeOff();
