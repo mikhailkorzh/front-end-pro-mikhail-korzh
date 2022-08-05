@@ -1,11 +1,37 @@
 const getCharactersButton = document.getElementById("button");
-const charactersApi = "https://rickandmortyapi.com/api/character";
 const container = document.querySelector("div.container");
 const maleCheckBox = document.getElementById("male");
 const femaleCheckBox = document.getElementById("female");
 const aliveCheckBox = document.getElementById("alive");
 const deadCheckBox = document.getElementById("dead");
+
+maleCheckBox.addEventListener("click", () => {
+  getCharacters(maleCheckBox, charactersList, "Male");
+});
+
+femaleCheckBox.addEventListener("click", () => {
+  getCharacters(femaleCheckBox, charactersList, "Female");
+});
+
+aliveCheckBox.addEventListener("click", () => {
+  getCharacters(aliveCheckBox, charactersList, "Alive");
+});
+
+deadCheckBox.addEventListener("click", () => {
+  getCharacters(deadCheckBox, charactersList, "Dead");
+});
+
 let charactersList = [];
+
+const charactesID = function getCharactesID() {
+  let charactersArray = [];
+  for (let i = 0; i < 300; i++) {
+    charactersArray.push(i);
+  }
+  return charactersArray.toString();
+}
+
+const charactersApi = `https://rickandmortyapi.com/api/character/${charactesID()}`;
 
 showCharacters();
 
@@ -17,11 +43,11 @@ async function showCharacters() {
 }
 
 function setData(data) {
-  charactersList = data.results;
-  return charactersList;
+  return (charactersList = data);
 }
 
 function drawCharacter(data) {
+  console.log(data);
   data.forEach((element) => {
     createCard(element);
   });
@@ -75,22 +101,6 @@ function createCard(character) {
   container.append(card);
 }
 
-maleCheckBox.addEventListener("click", () => {
-  getCharacters(maleCheckBox, charactersList, "Male");
-});
-
-femaleCheckBox.addEventListener("click", () => {
-  getCharacters(femaleCheckBox, charactersList, "Female");
-});
-
-aliveCheckBox.addEventListener("click", () => {
-  getCharacters(aliveCheckBox, charactersList, "Alive");
-});
-
-deadCheckBox.addEventListener("click", () => {
-  getCharacters(deadCheckBox, charactersList, "Dead");
-});
-
 function getCharacters(webElement, characters, option) {
   container.replaceChildren();
   if (webElement.checked === true) {
@@ -132,7 +142,6 @@ function disableUnusedCheckboxes(option) {
 function filterCharacters_(characters, filterValue) {
   characters.forEach((element) => {
     if (element.gender === filterValue || element.status === filterValue) {
-      console.log("list", element);
       createCard(element);
     }
   });
