@@ -1,14 +1,16 @@
+@import "normalize.css";
+
 body {
-  font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   background: #ecf0f1;
   margin: 0;
   padding: 0;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .container {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .card {
   position: relative;
@@ -21,9 +23,9 @@ body {
   display: flex;
 }
 .card .card-info {
-	flex: 0 0 50%;
+  flex: 0 0 50%;
 }
-.card  .content {
+.card .content {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
@@ -34,69 +36,69 @@ body {
   margin-bottom: 0;
 }
 .card .status {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 .card .status p {
   font-size: 18px;
   letter-spacing: 0.5px;
   font-weight: 300;
-	padding-left: 10px;
+  padding-left: 10px;
 }
 .card .status .live-status {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: green;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
 }
 .card .status .live-status.dead {
-	background-color: red;
+  background-color: red;
 }
 .card .content {
   margin-bottom: 5px;
-	font-weight: 300;
+  font-weight: 300;
 }
 .card .card-image img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .header {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
 }
 .header h2 {
-	margin: 0 15px 0 0;
+  margin: 0 15px 0 0;
 }
 .header .form-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex: 0 0 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 50%;
 }
 .header .submit-btn {
-	padding: 10px;
-	background-color: #ffffff;
-	border-radius: 10px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	box-shadow: 3px 5px 10px rgb(0 0 0 / 20%);
-	transition-duration: 0.5s;
-	position: relative;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 3px 5px 10px rgb(0 0 0 / 20%);
+  transition-duration: 0.5s;
+  position: relative;
 }
 .header .submit-btn:hover {
-	background-color: #d8d8dd;
-	color: #ffffff;
-	border: 2px solid #9d9da0;
-	top: 1.5px;
+  background-color: #d8d8dd;
+  color: #ffffff;
+  border: 2px solid #9d9da0;
+  top: 1.5px;
 }
 input[type="checkbox"] {
   display: none;
 }
 
 input[type="checkbox"]:hover + label:before {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .checkbox {
@@ -109,22 +111,22 @@ input[type="checkbox"]:hover + label:before {
 
 .checkbox:before {
   z-index: 15;
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 6px;
   transition: all 0.3s ease;
   cursor: pointer;
   width: 15px;
-	height: 15px;
-	border: 3px solid #444;
+  height: 15px;
+  border: 3px solid #444;
 }
 
 input[type="checkbox"]:checked + label {
   color: #000000;
 }
 
-input[type="checkbox"]:checked +  label:before {
+input[type="checkbox"]:checked + label:before {
   border-color: transparent;
   border-left-color: #2ecc71;
   border-bottom-color: #2ecc71;

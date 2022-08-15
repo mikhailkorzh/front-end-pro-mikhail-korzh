@@ -1,3 +1,5 @@
+import "./styles/style.css";
+
 const getCharactersButton = document.getElementById("button");
 const container = document.querySelector("div.container");
 const maleCheckBox = document.getElementById("male");
@@ -25,11 +27,11 @@ let charactersList = [];
 
 const charactesID = function getCharactesID() {
   let charactersArray = [];
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 299; i++) {
     charactersArray.push(i);
   }
   return charactersArray.toString();
-}
+};
 
 const charactersApi = `https://rickandmortyapi.com/api/character/${charactesID()}`;
 
