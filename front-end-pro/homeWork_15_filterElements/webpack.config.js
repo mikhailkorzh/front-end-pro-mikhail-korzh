@@ -6,8 +6,11 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
   entry: {
-    main: "./index.js",
-    analytics: "./analytics.js",
+    main: path.resolve(__dirname, "./src/index.js"),
+    analytics: path.resolve(__dirname, "./src/analytics.js"),
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
   output: {
     filename: "[name].[contenthash].js",
