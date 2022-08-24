@@ -27,7 +27,7 @@ let charactersList = [];
 
 const charactesID = function getCharactesID() {
   let charactersArray = [];
-  for (let i = 0; i < 299; i++) {
+  for (let i = 0; i < 200; i++) {
     charactersArray.push(i);
   }
   return charactersArray.toString();
