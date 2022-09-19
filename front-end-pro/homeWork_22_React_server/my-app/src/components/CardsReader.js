@@ -1,66 +1,78 @@
-import '../App.css';
-import React, {useState} from 'react';
-import Cards from './Cards';
-import axios from 'axios';
+import "../App.css";
+import React, { useEffect, useState, useCallback } from "react";
+import Cards from "./Cards";
+import CircularIndeterminate from "./CircularIndeterminate";
+import axios from "axios";
 
 const charactersID = function getCharactesID() {
-    let charactersArray = [];
-    for (let i = 0; i < 299; i++) {
-        charactersArray.push(i);
-    }
-    return charactersArray.toString();
+  let charactersArray = [];
+  for (let i = 0; i < 299; i++) {
+    charactersArray.push(i);
+  }
+  return charactersArray.toString();
 };
 
-const charactersApi = `https://rickandmortyapi.com/api/character/${charactersID()}`;
+const charactersApi = "https://rickandmortyapi.com/api/character";
 
 function CardsReader() {
-    const [post, setPost] = React.useState(null);
-    const [query, setQuery] = useState('');
+  const [characters, setCharacters] = useState([]);
+  const [filter, setFilter] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-    React.useEffect(() => {
-        axios.get(charactersApi).then((response) => {
-            setPost(response.data);
-        });
-    }, []);
+  const getCharacters = useCallback(() => {
+    setIsLoading(true);
+    axios.get(charactersApi, { params: { name: filter } }).then((response) => {
+      setCharacters(response.data.results);
+      setIsLoading(false);
+    });
+  }, [filter]);
 
-    if (!post) return null;
+  //   useEffect(() => {
+  //     setIsLoading(true);
+  //     axios.get(charactersApi).then((response) => {
+  //       setCharacters(response.data);
+  //       setIsLoading(false);
+  //     });
+  //   }, [filter]);
 
-    const handleChange = event => {
-        event.preventDefault();
-        if (!event.target.value) {
-            console.log('input value is empty');
-        } else {
-            console.log('input value is NOT empty');
-        }
-        setQuery(event.target.value);
-    };
+  const handleChange = (event) => {
+    setFilter(event.target.value);
+  };
 
+  const renderCharacter = (
+    <div className="container">
+      {characters.length > 0 ? (
+        characters
+          //   .filter((character) => {
+          //     return character.name.toLowerCase().includes(filter.toLowerCase());
+          //   })
+          .map((character, index) => (
+            <Cards
+              key={character.id}
+              name={character.name}
+              species={character.species}
+              status={character.status}
+              location={character.location.name}
+              image={character.image}
+            />
+          ))
+      ) : (
+        <h1>Enter name</h1>
+      )}
+    </div>
+  );
 
-    return (
-        <div className='App'>
-            <input placeholder="Enter Post Title"
-                   onChange={handleChange}
-                   autoComplete="off">
-            </input>
-
-            <div className="container">
-                {post.filter(post => {
-                    if (post.name.toLowerCase().includes(query.toLowerCase())) {
-                        return post;
-                    }
-                }).map((post, index) =>
-                    <Cards
-                        key={index}
-                        name={post.name}
-                        species={post.species}
-                        status={post.status}
-                        location={post.location.name}
-                        image={post.image}
-                    />
-                )}
-            </div>
-        </div>
-    );
+  return (
+    <div className="App">
+      <input
+        placeholder="Enter Post Title"
+        onChange={handleChange}
+        autoComplete="off"
+      />
+      <button onClick={getCharacters}>Get Characters</button>
+      {isLoading ? <CircularIndeterminate /> : renderCharacter}
+    </div>
+  );
 }
 
 export default CardsReader;
